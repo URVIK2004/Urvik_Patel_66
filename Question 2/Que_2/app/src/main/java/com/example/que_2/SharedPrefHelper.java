@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 
 public class SharedPrefHelper {
 
-    private static final String PREFS_NAME = "NotificationPreferences";
+    private static final String PREFS_NAME = "Saved";
     private SharedPreferences sharedPreferences;
 
     public SharedPrefHelper(Context context) {

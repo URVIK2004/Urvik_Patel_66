@@ -3,7 +3,6 @@ package com.example.que_2;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -22,17 +21,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        switchSound = findViewById(r.id.Sound);
-        switchVibration = findViewById(r.id.Vibration);
-        switchLED = findViewById(r.id.LED);
-        switchBanners = findViewById(r.id.Banners);
-        switchContent = findViewById(r.id.Content);
-        switchLockScreen = findViewById(r.id.Lockscreen);
-        saveButton = findViewById(r.id.button);
+        switchSound = findViewById(R.id.Sound);
+        switchVibration = findViewById(R.id.Vibration);
+        switchLED = findViewById(R.id.LED);
+        switchBanners = findViewById(R.id.Banners);
+        switchContent = findViewById(R.id.Content);
+        switchLockScreen = findViewById(R.id.Lockscreen);
+        saveButton = findViewById(R.id.button);
         preferences = getSharedPreferences("NotificationPrefs", MODE_PRIVATE);
         loadPreferences();
-        saveButton.setOnClickListener(view -> showBottomSheet());
-    }
+        saveButton.setOnClickListener(view -> . showBottomSheet());
+
 
     private void loadPreferences()
     {
