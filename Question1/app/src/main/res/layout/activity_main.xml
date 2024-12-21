@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/box"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="#0000FF" />
+
+
+    <Button
+        android:id="@+id/buttonUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/box"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-1dp"
+        android:background="#ADD8E6"
+        android:text="Up" />
+
+    <Button
+        android:id="@+id/buttonDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Down"
+        android:layout_below="@id/box"
+        android:layout_centerHorizontal="true"
+        android:background="#ADD8E6"/>
+
+    <Button
+        android:id="@+id/buttonLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Left"
+        android:layout_toLeftOf="@id/box"
+        android:layout_centerVertical="true"
+        android:background="#ADD8E6"/>
+
+    <Button
+        android:id="@+id/buttonRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Right"
+        android:layout_toRightOf="@id/box"
+        android:layout_centerVertical="true"
+        android:background="#ADD8E6"/>
+
+
+</RelativeLayout>
