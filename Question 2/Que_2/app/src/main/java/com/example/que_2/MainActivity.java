@@ -1,6 +1,5 @@
 package com.example.que_2;
 
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
@@ -21,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         switchSound = findViewById(R.id.Sound);
         switchVibration = findViewById(R.id.Vibration);
         switchLED = findViewById(R.id.LED);
@@ -28,13 +28,14 @@ public class MainActivity extends AppCompatActivity {
         switchContent = findViewById(R.id.Content);
         switchLockScreen = findViewById(R.id.Lockscreen);
         saveButton = findViewById(R.id.button);
+
         preferences = getSharedPreferences("NotificationPrefs", MODE_PRIVATE);
         loadPreferences();
-        saveButton.setOnClickListener(view -> . showBottomSheet());
 
+        saveButton.setOnClickListener(view -> showBottomSheet());
+    }
 
-    private void loadPreferences()
-    {
+    private void loadPreferences() {
         switchSound.setChecked(preferences.getBoolean("Sound", false));
         switchVibration.setChecked(preferences.getBoolean("Vibration", false));
         switchLED.setChecked(preferences.getBoolean("LED", false));
@@ -53,22 +54,26 @@ public class MainActivity extends AppCompatActivity {
         editor.putBoolean("LockScreen", switchLockScreen.isChecked());
         editor.apply();
 
-        Toast.makeText(this, "Preferences Saved!", Toast LENGTH_SHORT).show();
+        Toast.makeText(this, "Preferences Saved!", Toast.LENGTH_SHORT).show();
     }
 
     private void showBottomSheet() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
-        bottomSheetDialog.setContentView(R.layout);
+        bottomSheetDialog.setContentView(R.layout.bottom_sheet_layout); // Replace with the correct layout file for your bottom sheet
 
         Button confirmButton = bottomSheetDialog.findViewById(R.id.btn_confirm);
         Button cancelButton = bottomSheetDialog.findViewById(R.id.btn_cancel);
 
-        confirmButton.setOnClickListener( -> {
-            savePreferences();
-            bottomSheetDialog.dismiss();
-        });
+        if (confirmButton != null) {
+            confirmButton.setOnClickListener(v -> {
+                savePreferences();
+                bottomSheetDialog.dismiss();
+            });
+        }
 
-        cancelButton.setOnClickListener(v -> bottomSheetDialog.dismiss());
+        if (cancelButton != null) {
+            cancelButton.setOnClickListener(v -> bottomSheetDialog.dismiss());
+        }
 
         bottomSheetDialog.show();
     }
